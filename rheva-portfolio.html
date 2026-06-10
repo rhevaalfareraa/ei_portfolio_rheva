@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rheva Alfarera Mahfud — Business Analyst & Product Thinker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#111844;
+  --navy2:#1a2560;
+  --indigo:#4B5694;
+  --slate:#7288AE;
+  --cream:#EAE0CF;
+  --cream2:#f5f0e8;
+  --cream3:#faf7f2;
+  --white:#ffffff;
+  --text-dark:#0d1230;
+  --text-mid:#3a4060;
+  --text-muted:#6b7494;
+  --text-light:#9aa0bf;
+  --border-light:rgba(17,24,68,0.08);
+  --border-mid:rgba(17,24,68,0.15);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --font-mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--cream3);
+  color:var(--text-dark);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,247,242,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border-light);
+  padding:0 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  height:64px;
+}
+.nav-brand{
+  font-family:var(--font-display);
+  font-weight:600;font-size:18px;
+  color:var(--navy);letter-spacing:0.02em;
+}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:400;
+  color:var(--text-mid);text-decoration:none;
+  letter-spacing:0.04em;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{
+  background:var(--navy);color:var(--white);
+  font-size:13px;font-weight:500;
+  padding:10px 24px;border-radius:4px;
+  text-decoration:none;letter-spacing:0.02em;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--navy2)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  padding:120px 48px 80px;
+  gap:80px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 60% at 70% 50%, rgba(75,86,148,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-mono);font-size:11px;
+  color:var(--indigo);letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:24px;
+}
+.hero-eyebrow::before{
+  content:'';width:32px;height:1px;background:var(--indigo);
+}
+.hero-headline{
+  font-family:var(--font-display);
+  font-size:clamp(42px,5vw,68px);
+  font-weight:400;line-height:1.1;
+  color:var(--navy);
+  margin-bottom:20px;
+  letter-spacing:-0.01em;
+}
+.hero-headline em{font-style:italic;color:var(--indigo)}
+.hero-sub{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-bottom:24px;
+}
+.hero-tag{
+  font-size:11px;font-weight:500;
+  color:var(--indigo);
+  background:rgba(75,86,148,0.08);
+  border:1px solid rgba(75,86,148,0.2);
+  padding:5px 12px;border-radius:100px;
+  letter-spacing:0.05em;text-transform:uppercase;
+}
+.hero-body{
+  font-size:16px;color:var(--text-mid);
+  line-height:1.75;max-width:440px;
+  margin-bottom:40px;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-primary{
+  background:var(--navy);color:var(--white);
+  padding:14px 32px;border-radius:4px;
+  font-size:14px;font-weight:500;text-decoration:none;
+  letter-spacing:0.02em;transition:background 0.2s, transform 0.2s;
+  display:inline-block;
+}
+.btn-primary:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn-secondary{
+  color:var(--navy);border:1.5px solid var(--navy);
+  padding:13px 32px;border-radius:4px;
+  font-size:14px;font-weight:500;text-decoration:none;
+  letter-spacing:0.02em;transition:all 0.2s;
+  display:inline-block;
+}
+.btn-secondary:hover{background:var(--navy);color:var(--white)}
+
+/* Hero Visual */
+.hero-visual{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-diagram{
+  width:100%;max-width:480px;
+  background:var(--white);
+  border:1px solid var(--border-mid);
+  border-radius:12px;
+  padding:36px;
+  position:relative;
+}
+.diagram-header{
+  font-family:var(--font-mono);
+  font-size:10px;color:var(--text-muted);
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:28px;
+  display:flex;align-items:center;gap:12px;
+}
+.diagram-header::after{content:'';flex:1;height:1px;background:var(--border-light)}
+.flow-row{display:flex;align-items:center;gap:0;margin-bottom:0}
+.flow-node{
+  flex:1;
+  background:var(--cream3);
+  border:1px solid var(--border-mid);
+  border-radius:6px;
+  padding:12px 14px;
+  text-align:center;
+}
+.flow-node-label{
+  font-size:10px;font-weight:500;
+  color:var(--text-muted);
+  letter-spacing:0.06em;text-transform:uppercase;
+  margin-bottom:4px;
+}
+.flow-node-value{
+  font-size:13px;font-weight:500;
+  color:var(--navy);
+}
+.flow-arrow{
+  width:32px;text-align:center;
+  font-size:14px;color:var(--slate);flex-shrink:0;
+}
+.diagram-metrics{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:10px;margin-top:20px;
+}
+.metric-block{
+  background:var(--navy);
+  border-radius:6px;padding:14px;
+}
+.metric-block.light{background:rgba(75,86,148,0.08);border:1px solid rgba(75,86,148,0.15)}
+.metric-num{
+  font-family:var(--font-display);
+  font-size:28px;font-weight:600;
+  color:var(--white);line-height:1;
+  margin-bottom:4px;
+}
+.metric-block.light .metric-num{color:var(--navy)}
+.metric-label{
+  font-size:10px;font-weight:400;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:0.05em;text-transform:uppercase;
+}
+.metric-block.light .metric-label{color:var(--text-muted)}
+.diagram-bar{
+  margin-top:20px;
+  background:var(--border-light);
+  border-radius:100px;height:6px;overflow:hidden;
+}
+.diagram-bar-fill{
+  height:100%;width:78%;
+  background:linear-gradient(90deg,var(--indigo),var(--slate));
+  border-radius:100px;
+  animation:fillBar 2s ease forwards;
+}
+@keyframes fillBar{from{width:0}to{width:78%}}
+.diagram-tags{
+  display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;
+}
+.diagram-tag{
+  font-size:10px;
+  color:var(--indigo);
+  background:rgba(75,86,148,0.08);
+  border:1px solid rgba(75,86,148,0.15);
+  padding:3px 8px;border-radius:3px;
+  font-family:var(--font-mono);
+}
+
+/* SECTION FRAMEWORK */
+section{padding:96px 48px}
+.section-label{
+  font-family:var(--font-mono);
+  font-size:11px;color:var(--text-muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:20px;
+}
+.section-label span{
+  display:inline-block;width:24px;height:1px;background:var(--text-muted);
+}
+.section-headline{
+  font-family:var(--font-display);
+  font-size:clamp(32px,3.5vw,48px);
+  font-weight:400;line-height:1.15;
+  color:var(--navy);
+  letter-spacing:-0.01em;
+}
+.section-headline em{font-style:italic;color:var(--indigo)}
+
+/* ABOUT */
+.about-section{background:var(--white)}
+.about-grid{
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:80px;align-items:start;
+  margin-top:64px;
+}
+.about-profile{
+  position:sticky;top:100px;
+}
+.profile-avatar{
+  width:100%;aspect-ratio:3/4;
+  background:var(--navy);
+  border-radius:8px;overflow:hidden;
+  position:relative;margin-bottom:24px;
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar-initials{
+  font-family:var(--font-display);
+  font-size:96px;font-weight:300;
+  color:rgba(255,255,255,0.15);
+  letter-spacing:-0.05em;
+}
+.avatar-badge{
+  position:absolute;bottom:20px;left:20px;right:20px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:6px;padding:12px 16px;
+}
+.avatar-badge-name{
+  font-weight:500;font-size:14px;color:var(--white);
+  margin-bottom:2px;
+}
+.avatar-badge-title{
+  font-size:12px;color:rgba(255,255,255,0.6);
+}
+.profile-stat{
+  display:flex;justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px solid var(--border-light);
+  font-size:13px;
+}
+.profile-stat-label{color:var(--text-muted)}
+.profile-stat-value{font-weight:500;color:var(--navy)}
+.about-content{}
+.about-intro{
+  font-size:18px;line-height:1.7;color:var(--text-mid);
+  margin-bottom:48px;
+  border-left:3px solid var(--indigo);
+  padding-left:24px;
+}
+.interests-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-bottom:48px;
+}
+.interest-card{
+  border:1px solid var(--border-mid);
+  border-radius:8px;padding:20px;
+  transition:border-color 0.2s, background 0.2s;
+}
+.interest-card:hover{
+  border-color:var(--indigo);
+  background:rgba(75,86,148,0.02);
+}
+.interest-icon{
+  width:36px;height:36px;
+  background:rgba(75,86,148,0.08);
+  border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;
+  font-size:16px;
+}
+.interest-name{
+  font-size:14px;font-weight:500;color:var(--navy);
+  margin-bottom:4px;
+}
+.interest-desc{font-size:13px;color:var(--text-muted)}
+
+/* SNAPSHOT — Numbers */
+.snapshot-section{
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+.snapshot-section::before{
+  content:'';position:absolute;
+  right:-200px;top:-200px;
+  width:600px;height:600px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.04);
+}
+.snapshot-section::after{
+  content:'';position:absolute;
+  right:-100px;top:-100px;
+  width:400px;height:400px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.04);
+}
+.snapshot-section .section-label{color:rgba(255,255,255,0.4)}
+.snapshot-section .section-label span{background:rgba(255,255,255,0.3)}
+.snapshot-headline{
+  font-family:var(--font-display);
+  font-size:clamp(32px,3.5vw,48px);
+  font-weight:400;line-height:1.15;
+  color:var(--white);
+  letter-spacing:-0.01em;
+  margin-bottom:64px;
+}
+.snapshot-headline em{font-style:italic;color:var(--cream)}
+.snapshot-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.08);
+  border-radius:8px;overflow:hidden;
+}
+.snapshot-item{
+  background:var(--navy);
+  padding:40px 36px;
+  position:relative;
+}
+.snapshot-item:hover{background:var(--navy2)}
+.snapshot-num{
+  font-family:var(--font-display);
+  font-size:clamp(48px,5vw,72px);
+  font-weight:300;
+  color:var(--white);
+  line-height:1;
+  margin-bottom:8px;
+  letter-spacing:-0.02em;
+}
+.snapshot-num span{
+  font-size:0.5em;
+  color:var(--cream);
+  font-style:italic;
+}
+.snapshot-label{
+  font-size:13px;color:rgba(255,255,255,0.5);
+  letter-spacing:0.02em;
+  font-weight:400;
+}
+.snapshot-accent{
+  position:absolute;top:24px;right:24px;
+  font-family:var(--font-mono);
+  font-size:10px;color:rgba(255,255,255,0.2);
+  letter-spacing:0.08em;text-transform:uppercase;
+}
+
+/* EXPERTISE */
+.expertise-section{background:var(--cream3)}
+.expertise-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  margin-top:64px;
+  border:1px solid var(--border-mid);
+  border-radius:8px;overflow:hidden;
+}
+.expertise-col{
+  padding:36px 28px;
+  border-right:1px solid var(--border-mid);
+  transition:background 0.2s;
+}
+.expertise-col:last-child{border-right:none}
+.expertise-col:hover{background:var(--white)}
+.expertise-icon{
+  width:44px;height:44px;
+  background:var(--navy);
+  border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+  font-size:20px;color:var(--white);
+}
+.expertise-title{
+  font-size:14px;font-weight:500;
+  color:var(--navy);margin-bottom:20px;
+  line-height:1.3;
+}
+.expertise-tags{display:flex;flex-direction:column;gap:6px}
+.expertise-tag{
+  font-size:12px;color:var(--text-muted);
+  padding:5px 0;
+  border-bottom:1px solid var(--border-light);
+}
+.expertise-tag:last-child{border-bottom:none}
+
+/* CASE STUDIES */
+.cases-section{background:var(--white)}
+.cases-intro{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:end;
+  margin-bottom:80px;
+}
+.cases-intro-body{
+  font-size:16px;color:var(--text-mid);line-height:1.75;
+}
+.cases-filter{
+  display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;
+}
+.filter-btn{
+  font-size:12px;font-weight:400;
+  color:var(--text-muted);
+  background:transparent;
+  border:1px solid var(--border-mid);
+  padding:7px 16px;border-radius:100px;
+  cursor:pointer;transition:all 0.2s;
+  font-family:var(--font-body);
+}
+.filter-btn.active,.filter-btn:hover{
+  background:var(--navy);color:var(--white);border-color:var(--navy);
+}
+.cases-grid{display:flex;flex-direction:column;gap:2px}
+
+/* Case card */
+.case-card{
+  border:1px solid var(--border-mid);
+  border-radius:8px;overflow:hidden;
+  background:var(--cream3);
+  cursor:pointer;
+  transition:background 0.2s;
+}
+.case-card:hover{background:var(--white)}
+.case-card-header{
+  display:grid;grid-template-columns:80px 1fr auto;
+  gap:24px;align-items:center;
+  padding:28px 32px;
+}
+.case-num{
+  font-family:var(--font-mono);
+  font-size:11px;color:var(--text-light);
+  letter-spacing:0.08em;
+}
+.case-title-block{}
+.case-title{
+  font-size:16px;font-weight:500;color:var(--navy);
+  margin-bottom:4px;
+}
+.case-subtitle{font-size:13px;color:var(--text-muted)}
+.case-meta{
+  display:flex;gap:8px;align-items:center;
+  flex-wrap:wrap;justify-content:flex-end;
+}
+.case-tag{
+  font-size:11px;font-weight:400;
+  color:var(--indigo);
+  background:rgba(75,86,148,0.08);
+  border:1px solid rgba(75,86,148,0.15);
+  padding:4px 10px;border-radius:3px;
+  letter-spacing:0.03em;
+  font-family:var(--font-mono);
+}
+.case-expand{
+  font-size:18px;color:var(--text-muted);
+  transition:transform 0.3s;
+  margin-left:16px;
+}
+.case-card.open .case-expand{transform:rotate(45deg)}
+.case-body{
+  display:none;
+  padding:0 32px 32px;
+  border-top:1px solid var(--border-light);
+  margin-top:0;
+}
+.case-card.open .case-body{display:block}
+.case-content-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:32px;
+  margin-top:28px;
+}
+.case-field-label{
+  font-family:var(--font-mono);
+  font-size:10px;color:var(--text-muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.case-field-value{
+  font-size:14px;color:var(--text-mid);
+  line-height:1.6;
+}
+.case-deliverables{
+  margin-top:24px;
+  padding:20px 24px;
+  background:var(--white);
+  border:1px solid var(--border-mid);
+  border-radius:6px;
+}
+.case-del-label{
+  font-family:var(--font-mono);
+  font-size:10px;color:var(--text-muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.case-del-list{
+  display:flex;gap:8px;flex-wrap:wrap;
+}
+.case-del-item{
+  font-size:12px;font-weight:500;
+  color:var(--navy);
+  background:rgba(17,24,68,0.05);
+  border:1px solid var(--border-mid);
+  padding:5px 12px;border-radius:3px;
+}
+.case-role-tools{
+  margin-top:16px;
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+
+/* APPROACH */
+.approach-section{
+  background:var(--cream);
+}
+.approach-grid{
+  display:grid;grid-template-columns:1fr 2fr;
+  gap:80px;margin-top:64px;
+}
+.approach-intro{
+  font-size:16px;color:var(--text-mid);
+  line-height:1.75;
+}
+.approach-steps{
+  display:flex;flex-direction:column;gap:0;
+}
+.approach-step{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;
+  padding:28px 0;
+  border-bottom:1px solid var(--border-mid);
+  position:relative;
+}
+.approach-step:last-child{border-bottom:none}
+.step-num{
+  font-family:var(--font-display);
+  font-size:32px;font-weight:300;
+  color:var(--cream);
+  line-height:1;
+  -webkit-text-stroke:1px var(--indigo);
+}
+.step-content{}
+.step-title{
+  font-size:15px;font-weight:500;color:var(--navy);
+  margin-bottom:6px;
+}
+.step-desc{font-size:13px;color:var(--text-muted);line-height:1.6}
+
+/* EXPERIENCE */
+.exp-section{background:var(--white)}
+.exp-timeline{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:64px;
+  border-left:1px solid var(--border-mid);
+  padding-left:40px;
+  position:relative;
+}
+.exp-item{
+  position:relative;padding-bottom:40px;
+}
+.exp-item::before{
+  content:'';
+  position:absolute;
+  left:-46px;top:4px;
+  width:12px;height:12px;
+  border-radius:50%;
+  background:var(--cream3);
+  border:2px solid var(--indigo);
+}
+.exp-item:last-child{padding-bottom:0}
+.exp-period{
+  font-family:var(--font-mono);
+  font-size:11px;color:var(--text-muted);
+  letter-spacing:0.06em;
+  margin-bottom:6px;
+}
+.exp-role{
+  font-size:16px;font-weight:500;color:var(--navy);
+  margin-bottom:2px;
+}
+.exp-org{
+  font-size:13px;color:var(--indigo);
+  margin-bottom:10px;
+}
+.exp-desc{font-size:13px;color:var(--text-muted);line-height:1.6;max-width:560px}
+.exp-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.exp-tag-item{
+  font-size:11px;
+  color:var(--text-muted);
+  border:1px solid var(--border-mid);
+  padding:3px 10px;border-radius:3px;
+}
+
+/* AWARDS */
+.awards-section{background:var(--navy)}
+.awards-section .section-label{color:rgba(255,255,255,0.35)}
+.awards-section .section-label span{background:rgba(255,255,255,0.25)}
+.awards-section .section-headline{color:var(--white)}
+.awards-section .section-headline em{color:var(--cream)}
+.awards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;margin-top:64px;
+}
+.award-card{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;padding:28px;
+  transition:background 0.2s,border-color 0.2s;
+}
+.award-card:hover{
+  background:rgba(255,255,255,0.07);
+  border-color:rgba(255,255,255,0.15);
+}
+.award-medal{
+  width:40px;height:40px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;margin-bottom:16px;
+}
+.award-medal.gold{background:rgba(218,165,32,0.15);color:#DAA520}
+.award-medal.silver{background:rgba(192,192,192,0.15);color:#C0C0C0}
+.award-medal.finalist{background:rgba(75,86,148,0.15);color:var(--slate)}
+.award-medal.member{background:rgba(234,224,207,0.1);color:var(--cream)}
+.award-title{
+  font-size:15px;font-weight:500;color:var(--white);
+  margin-bottom:4px;line-height:1.4;
+}
+.award-event{
+  font-size:13px;color:rgba(255,255,255,0.45);
+  margin-bottom:4px;
+}
+.award-location{
+  font-family:var(--font-mono);
+  font-size:11px;color:rgba(255,255,255,0.25);
+  letter-spacing:0.05em;
+}
+
+/* CERTIFICATION */
+.cert-section{background:var(--cream3)}
+.cert-card{
+  margin-top:64px;
+  border:1px solid var(--border-mid);
+  border-radius:8px;overflow:hidden;
+  background:var(--white);
+  display:grid;grid-template-columns:320px 1fr;
+}
+.cert-visual{
+  background:var(--navy);
+  padding:48px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.cert-badge{
+  width:72px;height:72px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:32px;margin-bottom:auto;
+}
+.cert-issuer{
+  font-family:var(--font-mono);
+  font-size:11px;color:rgba(255,255,255,0.4);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:4px;
+}
+.cert-name-visual{
+  font-family:var(--font-display);
+  font-size:24px;font-weight:400;
+  color:var(--white);line-height:1.3;
+}
+.cert-content{padding:48px}
+.cert-title{
+  font-family:var(--font-display);
+  font-size:28px;font-weight:400;
+  color:var(--navy);margin-bottom:8px;
+  line-height:1.3;
+}
+.cert-body{
+  font-size:15px;color:var(--text-mid);
+  line-height:1.7;margin-bottom:32px;
+}
+.cert-details{
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.cert-detail{}
+.cert-detail-label{
+  font-family:var(--font-mono);
+  font-size:10px;color:var(--text-muted);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:4px;
+}
+.cert-detail-value{font-size:14px;font-weight:500;color:var(--navy)}
+
+/* PUBLICATION + IP */
+.pub-section{background:var(--white)}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:64px}
+.pub-card{
+  border:1px solid var(--border-mid);
+  border-radius:8px;overflow:hidden;
+  background:var(--cream3);
+}
+.pub-card-header{
+  background:var(--navy);
+  padding:36px;
+}
+.pub-type{
+  font-family:var(--font-mono);
+  font-size:10px;color:rgba(255,255,255,0.4);
+  letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.pub-title{
+  font-family:var(--font-display);
+  font-size:22px;font-weight:400;
+  color:var(--white);line-height:1.4;
+}
+.pub-body{padding:28px}
+.pub-detail{
+  display:flex;justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid var(--border-light);
+  font-size:13px;
+}
+.pub-detail:last-child{border-bottom:none}
+.pub-detail-label{color:var(--text-muted)}
+.pub-detail-value{font-weight:500;color:var(--navy);text-align:right;max-width:60%}
+
+/* CONTACT */
+.contact-section{background:var(--navy);position:relative;overflow:hidden}
+.contact-section::before{
+  content:'RHEVA';
+  position:absolute;bottom:-80px;right:-40px;
+  font-family:var(--font-display);
+  font-size:280px;font-weight:300;
+  color:rgba(255,255,255,0.02);
+  pointer-events:none;letter-spacing:-0.05em;
+  white-space:nowrap;
+}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+  margin-top:64px;
+}
+.contact-intro{}
+.contact-headline{
+  font-family:var(--font-display);
+  font-size:clamp(40px,4vw,60px);
+  font-weight:400;line-height:1.15;
+  color:var(--white);
+  letter-spacing:-0.01em;
+  margin-bottom:24px;
+}
+.contact-headline em{font-style:italic;color:var(--cream)}
+.contact-body{
+  font-size:15px;color:rgba(255,255,255,0.5);
+  line-height:1.75;margin-bottom:40px;
+}
+.contact-links{display:flex;flex-direction:column;gap:12px}
+.contact-link{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:6px;
+  text-decoration:none;
+  transition:background 0.2s,border-color 0.2s;
+  color:var(--white);
+}
+.contact-link:hover{
+  background:rgba(255,255,255,0.08);
+  border-color:rgba(255,255,255,0.15);
+}
+.contact-link-label{
+  display:flex;align-items:center;gap:12px;
+  font-size:13px;color:rgba(255,255,255,0.4);
+  text-transform:uppercase;letter-spacing:0.06em;
+  font-family:var(--font-mono);
+}
+.contact-link-value{
+  font-size:14px;font-weight:400;color:rgba(255,255,255,0.85);
+}
+.contact-cta-area{
+  display:flex;flex-direction:column;gap:16px;
+  justify-content:center;
+  padding:48px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;
+}
+.contact-cta-heading{
+  font-family:var(--font-display);
+  font-size:24px;font-weight:400;
+  color:var(--white);margin-bottom:8px;
+}
+.contact-cta-sub{
+  font-size:14px;color:rgba(255,255,255,0.4);
+  line-height:1.6;margin-bottom:24px;
+}
+.btn-cream{
+  background:var(--cream);color:var(--navy);
+  padding:14px 32px;border-radius:4px;
+  font-size:14px;font-weight:500;text-decoration:none;
+  letter-spacing:0.02em;transition:background 0.2s;
+  display:inline-block;text-align:center;
+}
+.btn-cream:hover{background:var(--cream2)}
+.btn-ghost{
+  background:transparent;color:rgba(255,255,255,0.6);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:14px 32px;border-radius:4px;
+  font-size:14px;font-weight:400;text-decoration:none;
+  letter-spacing:0.02em;transition:all 0.2s;
+  display:inline-block;text-align:center;
+}
+.btn-ghost:hover{
+  background:rgba(255,255,255,0.05);
+  color:var(--white);
+}
+
+/* FOOTER */
+footer{
+  background:rgba(0,0,0,0.3);
+  padding:24px 48px;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-text{
+  font-size:12px;color:rgba(255,255,255,0.25);
+  font-family:var(--font-mono);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-up{animation:fadeUp 0.7s ease forwards}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .expertise-grid{grid-template-columns:repeat(3,1fr)}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:100px}
+  .hero-visual{display:none}
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  section{padding:64px 24px}
+  .about-grid,.cases-intro,.contact-grid,.pub-grid{grid-template-columns:1fr;gap:40px}
+  .snapshot-grid{grid-template-columns:repeat(2,1fr)}
+  .awards-grid{grid-template-columns:1fr}
+  .cert-card{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">RAM</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#recognition">Recognition</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Let's Connect</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left fade-up">
+    <div class="hero-eyebrow">Portfolio 2025–2026</div>
+    <h1 class="hero-headline">
+      Transforming Business Needs into <em>Digital Solutions</em>
+    </h1>
+    <div class="hero-sub">
+      <span class="hero-tag">Business Analyst</span>
+      <span class="hero-tag">Data Analytics</span>
+      <span class="hero-tag">Business Intelligence</span>
+      <span class="hero-tag">UI/UX Design</span>
+      <span class="hero-tag">QA Tester</span>
+    </div>
+    <p class="hero-body">
+      I bridge business objectives, user needs, and technology through structured analysis, process improvement, data-driven thinking, and user-centered design.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">View Case Studies</a>
+      <a href="#contact" class="btn-secondary">Let's Connect</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-diagram">
+      <div class="diagram-header">Analysis Framework</div>
+      <div class="flow-row">
+        <div class="flow-node">
+          <div class="flow-node-label">Discover</div>
+          <div class="flow-node-value">Business Needs</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="flow-node-label">Analyze</div>
+          <div class="flow-node-value">Requirements</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-node">
+          <div class="flow-node-label">Design</div>
+          <div class="flow-node-value">Solutions</div>
+        </div>
+      </div>
+
+      <div class="diagram-metrics">
+        <div class="metric-block">
+          <div class="metric-num">3.88</div>
+          <div class="metric-label">GPA / 4.00</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-num">10+</div>
+          <div class="metric-label">Projects</div>
+        </div>
+        <div class="metric-block light">
+          <div class="metric-num">6+</div>
+          <div class="metric-label">Competitions</div>
+        </div>
+        <div class="metric-block light">
+          <div class="metric-num">1</div>
+          <div class="metric-label">Published Book</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);margin-bottom:6px">
+          <span>Solution Delivery Rate</span><span>78%</span>
+        </div>
+        <div class="diagram-bar"><div class="diagram-bar-fill"></div></div>
+      </div>
+
+      <div class="diagram-tags">
+        <span class="diagram-tag">SQL</span>
+        <span class="diagram-tag">Python</span>
+        <span class="diagram-tag">Tableau</span>
+        <span class="diagram-tag">Figma</span>
+        <span class="diagram-tag">BPMN</span>
+        <span class="diagram-tag">UML</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-label"><span></span>About</div>
+  <div class="about-grid">
+    <div class="about-profile">
+      <div class="profile-avatar">
+        <div class="avatar-initials">RAM</div>
+        <div class="avatar-badge">
+          <div class="avatar-badge-name">Rheva Alfarera Mahfud</div>
+          <div class="avatar-badge-title">Information Systems · Universitas Bakrie</div>
+        </div>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat-label">GPA</span>
+        <span class="profile-stat-value">3.88 / 4.00</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat-label">Institution</span>
+        <span class="profile-stat-value">Universitas Bakrie</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat-label">Program</span>
+        <span class="profile-stat-value">Information Systems</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat-label">Certification</span>
+        <span class="profile-stat-value">BNSP Business Intelligence</span>
+      </div>
+      <div class="profile-stat">
+        <span class="profile-stat-label">IP Registration</span>
+        <span class="profile-stat-value">EC002026024837</span>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <h2 class="section-headline" style="margin-bottom:32px">A strategic mind at the <em>intersection</em> of business and technology</h2>
+      <p class="about-intro">
+        I approach every problem as a systems thinker — mapping processes, identifying root causes, and designing solutions that align business objectives with user realities. My work spans analysis, design, and delivery.
+      </p>
+
+      <h3 style="font-size:14px;font-weight:500;color:var(--navy);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px;font-family:var(--font-mono)">Areas of Interest</h3>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <div class="interest-icon">📊</div>
+          <div class="interest-name">Business Analysis</div>
+          <div class="interest-desc">Translating complex business needs into structured requirements and actionable frameworks</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">🎯</div>
+          <div class="interest-name">Product Strategy</div>
+          <div class="interest-desc">Defining product vision, roadmaps, and value propositions rooted in market insight</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">📈</div>
+          <div class="interest-name">Business Intelligence</div>
+          <div class="interest-desc">Transforming raw data into decision-ready insights through analytics and visualization</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">🖥️</div>
+          <div class="interest-name">UI/UX Design</div>
+          <div class="interest-desc">Designing intuitive, human-centered interfaces backed by user research and testing</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">✅</div>
+          <div class="interest-name">Quality Assurance</div>
+          <div class="interest-desc">Ensuring product integrity through systematic test planning and validation frameworks</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">🔄</div>
+          <div class="interest-name">Digital Transformation</div>
+          <div class="interest-desc">Driving organizational change through process optimization and technology adoption</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SNAPSHOT -->
+<section class="snapshot-section">
+  <div class="section-label"><span></span>By the numbers</div>
+  <h2 class="snapshot-headline">A track record built on <em>delivery</em></h2>
+  <div class="snapshot-grid">
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Projects</div>
+      <div class="snapshot-num">10<span>+</span></div>
+      <div class="snapshot-label">Projects completed across business analysis, design, and development</div>
+    </div>
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Diagrams</div>
+      <div class="snapshot-num">15<span>+</span></div>
+      <div class="snapshot-label">UML diagrams created for system modeling and process documentation</div>
+    </div>
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Screens</div>
+      <div class="snapshot-num">50<span>+</span></div>
+      <div class="snapshot-label">UI screens designed across web and mobile product interfaces</div>
+    </div>
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Competitions</div>
+      <div class="snapshot-num">6<span>+</span></div>
+      <div class="snapshot-label">Innovation competitions entered, including international showcases</div>
+    </div>
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Publication</div>
+      <div class="snapshot-num">1</div>
+      <div class="snapshot-label">Published book on data structures and algorithms with Python</div>
+    </div>
+    <div class="snapshot-item">
+      <div class="snapshot-accent">Intellectual Property</div>
+      <div class="snapshot-num">1</div>
+      <div class="snapshot-label">Registered intellectual property — demonstrating innovation ownership</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise-section" id="expertise">
+  <div class="section-label"><span></span>Expertise</div>
+  <h2 class="section-headline">Five disciplines, <em>one integrated</em> approach</h2>
+  <div class="expertise-grid">
+    <div class="expertise-col">
+      <div class="expertise-icon">📋</div>
+      <div class="expertise-title">Business Analysis</div>
+      <div class="expertise-tags">
+        <div class="expertise-tag">Requirement Gathering</div>
+        <div class="expertise-tag">Business Process Mapping</div>
+        <div class="expertise-tag">UML Modeling</div>
+        <div class="expertise-tag">BPMN</div>
+        <div class="expertise-tag">Documentation</div>
+      </div>
+    </div>
+    <div class="expertise-col">
+      <div class="expertise-icon">📊</div>
+      <div class="expertise-title">Data Analytics & BI</div>
+      <div class="expertise-tags">
+        <div class="expertise-tag">SQL</div>
+        <div class="expertise-tag">Python</div>
+        <div class="expertise-tag">Tableau</div>
+        <div class="expertise-tag">Power BI</div>
+        <div class="expertise-tag">Pentaho</div>
+      </div>
+    </div>
+    <div class="expertise-col">
+      <div class="expertise-icon">🎨</div>
+      <div class="expertise-title">UI/UX Design</div>
+      <div class="expertise-tags">
+        <div class="expertise-tag">User Flow</div>
+        <div class="expertise-tag">Wireframing</div>
+        <div class="expertise-tag">Prototyping</div>
+        <div class="expertise-tag">Information Architecture</div>
+        <div class="expertise-tag">Figma</div>
+      </div>
+    </div>
+    <div class="expertise-col">
+      <div class="expertise-icon">🔍</div>
+      <div class="expertise-title">Quality Assurance</div>
+      <div class="expertise-tags">
+        <div class="expertise-tag">Functional Testing</div>
+        <div class="expertise-tag">Test Scenario Design</div>
+        <div class="expertise-tag">Validation</div>
+        <div class="expertise-tag">UAT Planning</div>
+        <div class="expertise-tag">Bug Documentation</div>
+      </div>
+    </div>
+    <div class="expertise-col">
+      <div class="expertise-icon">🧭</div>
+      <div class="expertise-title">Business Strategy</div>
+      <div class="expertise-tags">
+        <div class="expertise-tag">Business Model Canvas</div>
+        <div class="expertise-tag">Customer Journey Mapping</div>
+        <div class="expertise-tag">Market Analysis</div>
+        <div class="expertise-tag">Value Proposition</div>
+        <div class="expertise-tag">Go-to-Market</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="cases-section" id="work">
+  <div class="section-label"><span></span>Case Studies</div>
+  <div class="cases-intro">
+    <div>
+      <h2 class="section-headline">Projects approached as <em>real business</em> challenges</h2>
+    </div>
+    <div>
+      <p class="cases-intro-body">Every project below represents a structured approach to problem-solving — from discovery to delivery. Each one demonstrates analytical rigor, design thinking, and business awareness.</p>
+      <div class="cases-filter" style="margin-top:20px">
+        <button class="filter-btn active" onclick="filterCases('all',this)">All</button>
+        <button class="filter-btn" onclick="filterCases('analysis',this)">Analysis</button>
+        <button class="filter-btn" onclick="filterCases('design',this)">Design</button>
+        <button class="filter-btn" onclick="filterCases('strategy',this)">Strategy</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cases-grid" id="casesGrid">
+
+    <div class="case-card" data-tags="design,analysis" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">01</div>
+        <div class="case-title-block">
+          <div class="case-title">Zenith</div>
+          <div class="case-subtitle">Enterprise productivity platform for modern teams</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">UI/UX</span>
+          <span class="case-tag">Analysis</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Teams lacked a unified platform for task management, collaboration, and progress visibility, leading to coordination inefficiencies.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Fragmented communication tools caused misalignment between project owners and team members, increasing delivery time by an estimated 30%.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Delivered a fully prototyped platform with role-based dashboards, task tracking, and analytics views ready for developer handoff.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">System Requirements Spec</span>
+            <span class="case-del-item">UML Use Case Diagram</span>
+            <span class="case-del-item">Activity Diagram</span>
+            <span class="case-del-item">Hi-fi Prototype</span>
+            <span class="case-del-item">Test Scenarios</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Business Analyst, UI/UX Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, draw.io, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="design,strategy" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">02</div>
+        <div class="case-title-block">
+          <div class="case-title">Travix</div>
+          <div class="case-subtitle">Smart travel planning and itinerary management application</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Product Design</span>
+          <span class="case-tag">Strategy</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Travelers struggled to consolidate bookings, itineraries, and local recommendations across multiple platforms into a seamless experience.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Conducted user research, mapped customer journeys, and defined a value proposition framework before moving into design and prototyping.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A validated mobile application concept with a defined product roadmap, business model canvas, and complete design system.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Business Model Canvas</span>
+            <span class="case-del-item">Customer Journey Map</span>
+            <span class="case-del-item">Wireframes</span>
+            <span class="case-del-item">Hi-fi Prototype</span>
+            <span class="case-del-item">Market Analysis</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Product Strategist, UI Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, Miro, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="analysis,design" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">03</div>
+        <div class="case-title-block">
+          <div class="case-title">Moovio</div>
+          <div class="case-subtitle">Movie discovery and community review platform</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">UI/UX</span>
+          <span class="case-tag">QA</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Existing movie platforms lacked meaningful community engagement features that allowed users to discover films aligned with personal preferences.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Low retention rates tied to poor personalization and an absence of community-driven curation mechanisms.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Delivered a complete design system, functional prototype, and end-to-end QA test documentation with 40+ validated test scenarios.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">SRS Document</span>
+            <span class="case-del-item">Sequence Diagram</span>
+            <span class="case-del-item">Class Diagram</span>
+            <span class="case-del-item">UI Design</span>
+            <span class="case-del-item">Test Cases</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Business Analyst, QA Tester</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, draw.io, Excel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="analysis,strategy" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">04</div>
+        <div class="case-title-block">
+          <div class="case-title">RuangIn</div>
+          <div class="case-subtitle">Co-working space discovery and booking platform</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Analysis</span>
+          <span class="case-tag">Strategy</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">The rise of remote work created demand for flexible, discoverable co-working spaces that could be booked transparently and efficiently.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Performed stakeholder analysis, mapped end-to-end booking processes via BPMN, and created structured system requirement specifications.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Full analysis documentation, business case, and interactive mockups enabling stakeholder sign-off for development initiation.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">BPMN Process Flow</span>
+            <span class="case-del-item">Use Case Spec</span>
+            <span class="case-del-item">ERD</span>
+            <span class="case-del-item">Wireframes</span>
+            <span class="case-del-item">Business Case</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Business Analyst, Process Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">draw.io, Bizagi, Figma, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="design,strategy" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">05</div>
+        <div class="case-title-block">
+          <div class="case-title">FitMeal</div>
+          <div class="case-subtitle">Nutrition planning and meal tracking application</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Product Design</span>
+          <span class="case-tag">Research</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Health-conscious users lacked an integrated tool to plan nutritional intake with local food data, calorie targets, and habit tracking.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Generic nutrition apps failed to account for local dietary preferences, making adherence difficult for Indonesian users.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Delivered a localized nutrition platform concept with a validated product strategy, business model, and complete mobile design system.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">User Research Report</span>
+            <span class="case-del-item">User Persona</span>
+            <span class="case-del-item">Information Architecture</span>
+            <span class="case-del-item">Prototype</span>
+            <span class="case-del-item">BMC</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Product Designer, Strategist</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, Miro, Canva</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="analysis,strategy" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">06</div>
+        <div class="case-title-block">
+          <div class="case-title">KONEVA</div>
+          <div class="case-subtitle">Knowledge management system for enterprise teams</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Enterprise</span>
+          <span class="case-tag">Analysis</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Organizations struggled to capture, organize, and surface institutional knowledge, resulting in high onboarding costs and knowledge loss from attrition.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Analyzed organizational workflows, defined knowledge taxonomy, and modeled system architecture using UML and entity-relationship diagrams.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Comprehensive system design with search architecture, user role management, and a dashboard prototype for knowledge administrators.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">System Architecture</span>
+            <span class="case-del-item">ERD</span>
+            <span class="case-del-item">Use Case Diagram</span>
+            <span class="case-del-item">Dashboard Design</span>
+            <span class="case-del-item">UAT Plan</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Business Analyst, Systems Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">draw.io, Figma, Lucidchart</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="analysis,design" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">07</div>
+        <div class="case-title-block">
+          <div class="case-title">Vrooms</div>
+          <div class="case-subtitle">Vehicle rental management platform — registered IP</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Registered IP</span>
+          <span class="case-tag">Full Cycle</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Vehicle rental operators relied on manual, paper-based processes that introduced errors, delays, and poor customer experience.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Lack of digital infrastructure led to double-bookings, unreliable vehicle tracking, and poor revenue visibility for operators.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A complete digital platform with booking management, fleet tracking, and analytics. Successfully filed for copyright registration (EC002026024837).</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Full SRS</span>
+            <span class="case-del-item">Complete UML Suite</span>
+            <span class="case-del-item">BPMN Process Maps</span>
+            <span class="case-del-item">Hi-fi Prototype</span>
+            <span class="case-del-item">IP Registration</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Lead Analyst, Designer, QA Lead</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, draw.io, Excel, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="strategy,design" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">08</div>
+        <div class="case-title-block">
+          <div class="case-title">PodWisata</div>
+          <div class="case-subtitle">Podcast platform for Indonesian tourism and travel culture</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Strategy</span>
+          <span class="case-tag">Content Design</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Indonesian tourism content lacked a dedicated audio format connecting travelers with authentic local stories, guides, and destination knowledge.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Conducted market sizing analysis, competitor benchmarking, and audience segmentation to define a monetization model and content strategy.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A validated platform concept with a full business model, audience growth framework, and partnership strategy for tourism stakeholders.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Market Analysis</span>
+            <span class="case-del-item">Business Model Canvas</span>
+            <span class="case-del-item">Audience Persona</span>
+            <span class="case-del-item">Content Strategy</span>
+            <span class="case-del-item">Platform Design</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Product Strategist, Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Miro, Figma, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="analysis,strategy" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">09</div>
+        <div class="case-title-block">
+          <div class="case-title">ForthicX</div>
+          <div class="case-subtitle">AI-driven technical skill assessment platform</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">AI Product</span>
+          <span class="case-tag">Analysis</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Hiring teams and educators faced challenges in accurately assessing technical competencies at scale without bias or inconsistency.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Manual assessment processes were time-intensive, inconsistent, and unable to adapt to varying skill levels or learning trajectories.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A complete product specification for an AI-assisted assessment engine, including adaptive testing logic, reporting module, and recruiter dashboard design.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Product Spec</span>
+            <span class="case-del-item">Algorithm Flow</span>
+            <span class="case-del-item">Dashboard Design</span>
+            <span class="case-del-item">Test Plan</span>
+            <span class="case-del-item">Data Model</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Product Analyst, UX Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, Notion, Python</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="strategy,analysis" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">10</div>
+        <div class="case-title-block">
+          <div class="case-title">BioAvtur</div>
+          <div class="case-subtitle">Sustainable aviation fuel feasibility and business strategy</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Business Case</span>
+          <span class="case-tag">Sustainability</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Indonesia's aviation sector faces pressure to decarbonize operations through sustainable fuel adoption, presenting both a regulatory and commercial challenge.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Performed feasibility analysis, market sizing, regulatory mapping, and stakeholder impact assessment to construct a viable business model for SAF adoption.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A comprehensive business case deck presented at the SRE ITB x Pertamina competition, reaching the semi-finalist stage.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Feasibility Study</span>
+            <span class="case-del-item">Market Analysis</span>
+            <span class="case-del-item">Financial Model</span>
+            <span class="case-del-item">Strategy Deck</span>
+            <span class="case-del-item">Stakeholder Map</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Business Strategist, Analyst</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Excel, PowerPoint, Canva</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="design,analysis" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">11</div>
+        <div class="case-title-block">
+          <div class="case-title">Naclo.id</div>
+          <div class="case-subtitle">Digital health and medical supply marketplace</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Health Tech</span>
+          <span class="case-tag">Design</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">Medical supply procurement remained fragmented across Indonesia, making it difficult for clinics and hospitals to source quality products efficiently.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Problem</div>
+            <div class="case-field-value">Procurement delays and unreliable suppliers increased operational risk for healthcare providers and added unnecessary cost overhead.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">Designed a B2B marketplace with verified supplier listings, procurement workflow management, and order tracking — validated through user testing sessions.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">User Research</span>
+            <span class="case-del-item">Service Blueprint</span>
+            <span class="case-del-item">UI Design System</span>
+            <span class="case-del-item">Prototype</span>
+            <span class="case-del-item">Usability Report</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">UX Researcher, Product Designer</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, Maze, Notion</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card" data-tags="design,analysis" onclick="toggleCase(this)">
+      <div class="case-card-header">
+        <div class="case-num">12</div>
+        <div class="case-title-block">
+          <div class="case-title">IEEE Website</div>
+          <div class="case-subtitle">Organization website redesign for IEEE student branch</div>
+        </div>
+        <div class="case-meta">
+          <span class="case-tag">Web Design</span>
+          <span class="case-tag">Leadership</span>
+          <span class="case-expand">+</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <div class="case-content-grid">
+          <div>
+            <div class="case-field-label">Context</div>
+            <div class="case-field-value">The IEEE student branch lacked a professional digital presence that could effectively communicate events, membership, and organizational achievements.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Approach</div>
+            <div class="case-field-value">Led the end-to-end redesign process — from stakeholder interviews and information architecture to visual design and content strategy — as Public Relations Chair.</div>
+          </div>
+          <div>
+            <div class="case-field-label">Outcome</div>
+            <div class="case-field-value">A redesigned website that increased member engagement and provided a consistent brand presence across digital channels for the student organization.</div>
+          </div>
+        </div>
+        <div class="case-deliverables">
+          <div class="case-del-label">Deliverables</div>
+          <div class="case-del-list">
+            <span class="case-del-item">Information Architecture</span>
+            <span class="case-del-item">Visual Design</span>
+            <span class="case-del-item">Component Library</span>
+            <span class="case-del-item">Content Strategy</span>
+            <span class="case-del-item">Brand Guidelines</span>
+          </div>
+        </div>
+        <div class="case-role-tools">
+          <div>
+            <div class="case-field-label">Role</div>
+            <div class="case-field-value">Design Lead, PR Chair</div>
+          </div>
+          <div>
+            <div class="case-field-label">Tools</div>
+            <div class="case-field-value">Figma, Webflow, Canva</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach-section" id="approach">
+  <div class="section-label"><span></span>Methodology</div>
+  <div class="approach-grid">
+    <div>
+      <h2 class="section-headline">A structured <em>consulting</em> framework</h2>
+      <p class="approach-intro" style="margin-top:24px">
+        Every project follows a deliberate process — from understanding the business context to validating the final solution. This approach ensures that design decisions are always grounded in evidence, not assumption.
+      </p>
+    </div>
+    <div class="approach-steps">
+      <div class="approach-step">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <div class="step-title">Understand Context</div>
+          <div class="step-desc">Engage stakeholders, define scope, and map the organizational environment to establish a clear project brief and success criteria.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <div class="step-title">Identify Problems</div>
+          <div class="step-desc">Apply root cause analysis, user interviews, and data review to distinguish symptoms from underlying business challenges.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <div class="step-title">Analyze Requirements</div>
+          <div class="step-desc">Document functional and non-functional requirements through structured elicitation, producing clear specifications for all stakeholders.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <div class="step-title">Model Processes</div>
+          <div class="step-desc">Visualize workflows, system interactions, and data flows using UML, BPMN, and entity-relationship models.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <div class="step-title">Design Solutions</div>
+          <div class="step-desc">Translate requirements into wireframes, prototypes, and design specifications — iterating on feedback from users and stakeholders.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <div class="step-title">Validate & Test</div>
+          <div class="step-desc">Develop comprehensive test scenarios, conduct user acceptance testing, and document findings against defined acceptance criteria.</div>
+        </div>
+      </div>
+      <div class="approach-step">
+        <div class="step-num">07</div>
+        <div class="step-content">
+          <div class="step-title">Deliver Outcomes</div>
+          <div class="step-desc">Package deliverables with clear documentation, handoff materials, and strategic recommendations for implementation and next phases.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-section" id="experience">
+  <div class="section-label"><span></span>Experience & Leadership</div>
+  <h2 class="section-headline">Built through <em>doing</em>, not just studying</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px">
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-period">2024 — Present</div>
+        <div class="exp-role">Teaching Assistant</div>
+        <div class="exp-org">Universitas Bakrie</div>
+        <div class="exp-desc">Supporting faculty in course delivery, mentoring students, and developing supplementary learning materials for information systems modules.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Mentorship</span>
+          <span class="exp-tag-item">Curriculum</span>
+          <span class="exp-tag-item">Communication</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2024</div>
+        <div class="exp-role">Digital Marketing Intern</div>
+        <div class="exp-org">Industry Placement</div>
+        <div class="exp-desc">Managed digital campaigns, analyzed performance metrics, and developed content strategies aligned with business objectives and audience segmentation.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Analytics</span>
+          <span class="exp-tag-item">Content Strategy</span>
+          <span class="exp-tag-item">SEO</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2023 — 2024</div>
+        <div class="exp-role">IEEE Public Relations Chair</div>
+        <div class="exp-org">IEEE Student Branch</div>
+        <div class="exp-desc">Led communication strategy, managed stakeholder relationships, and oversaw the organization's digital presence including website redesign initiative.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Leadership</span>
+          <span class="exp-tag-item">Stakeholder Mgmt</span>
+          <span class="exp-tag-item">PR Strategy</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2023 — 2024</div>
+        <div class="exp-role">Vice Chair</div>
+        <div class="exp-org">English Club</div>
+        <div class="exp-desc">Coordinated club operations, organized events, and facilitated English communication workshops for members across disciplines.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Leadership</span>
+          <span class="exp-tag-item">Event Mgmt</span>
+          <span class="exp-tag-item">Public Speaking</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-period">2023 — Present</div>
+        <div class="exp-role">Master of Ceremony</div>
+        <div class="exp-org">Various Events</div>
+        <div class="exp-desc">Facilitated professional and academic events as MC, demonstrating strong platform presence, audience management, and real-time communication skills.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Public Speaking</span>
+          <span class="exp-tag-item">Facilitation</span>
+          <span class="exp-tag-item">Leadership</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2023</div>
+        <div class="exp-role">English Teacher</div>
+        <div class="exp-org">Community Education</div>
+        <div class="exp-desc">Delivered English language instruction to community learners, developing curriculum materials and applying adaptive teaching methods based on student needs.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Curriculum Design</span>
+          <span class="exp-tag-item">Communication</span>
+          <span class="exp-tag-item">Adaptability</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-period">2022 — 2023</div>
+        <div class="exp-role">Creative Media</div>
+        <div class="exp-org">Student Organization</div>
+        <div class="exp-desc">Produced visual content, managed social media channels, and developed brand collateral for student organization communications and events.</div>
+        <div class="exp-tags">
+          <span class="exp-tag-item">Visual Design</span>
+          <span class="exp-tag-item">Content Creation</span>
+          <span class="exp-tag-item">Brand</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards-section" id="recognition">
+  <div class="section-label"><span></span>Recognition</div>
+  <h2 class="section-headline" style="color:var(--white)">Validated by <em>competition</em> and community</h2>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-medal silver">🥈</div>
+      <div class="award-title">Silver Medal — International Student Summit 2026</div>
+      <div class="award-event">International Student Summit</div>
+      <div class="award-location">Kuala Lumpur, Malaysia · 2026</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal gold">🏆</div>
+      <div class="award-title">Favorite Poster Award</div>
+      <div class="award-event">International Student Summit 2026</div>
+      <div class="award-location">Kuala Lumpur, Malaysia · 2026</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal silver">🥈</div>
+      <div class="award-title">Silver Medal — AISEEF</div>
+      <div class="award-event">AISEEF Innovation Competition</div>
+      <div class="award-location">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal finalist">📊</div>
+      <div class="award-title">Semi-Finalist — Business Case Competition</div>
+      <div class="award-event">SRE ITB × Pertamina</div>
+      <div class="award-location">National Level · 2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal finalist">🤖</div>
+      <div class="award-title">Top 20 Finalist — AI-Volution</div>
+      <div class="award-event">AI Innovation Challenge</div>
+      <div class="award-location">2025</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal member">⭐</div>
+      <div class="award-title">Member of the Month</div>
+      <div class="award-event">IEEE Student Branch</div>
+      <div class="award-location">2024</div>
+    </div>
+    <div class="award-card">
+      <div class="award-medal gold">🥇</div>
+      <div class="award-title">2nd Place Winner</div>
+      <div class="award-event">Pemuda Jakarta Berperan</div>
+      <div class="award-location">Jakarta · 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="cert-section">
+  <div class="section-label"><span></span>Certification</div>
+  <h2 class="section-headline">Professional <em>credentials</em> backed by national authority</h2>
+  <div class="cert-card">
+    <div class="cert-visual">
+      <div class="cert-badge">📜</div>
+      <div>
+        <div class="cert-issuer">Issued by</div>
+        <div class="cert-name-visual">Badan Nasional Sertifikasi Profesi</div>
+      </div>
+    </div>
+    <div class="cert-content">
+      <div class="cert-title">Business Intelligence Certification</div>
+      <p class="cert-body">
+        A nationally recognized professional certification in Business Intelligence issued by BNSP — Indonesia's National Professional Certification Authority. This credential validates competency in data analysis, reporting, and BI tooling at a professional standard.
+      </p>
+      <div class="cert-details">
+        <div class="cert-detail">
+          <div class="cert-detail-label">Issuing Authority</div>
+          <div class="cert-detail-value">BNSP — Badan Nasional Sertifikasi Profesi</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Year Awarded</div>
+          <div class="cert-detail-value">2025</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Discipline</div>
+          <div class="cert-detail-value">Business Intelligence & Data Analytics</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Status</div>
+          <div class="cert-detail-value">Active</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION + IP -->
+<section class="pub-section">
+  <div class="section-label"><span></span>Publication & Intellectual Property</div>
+  <h2 class="section-headline">Creating knowledge, not just <em>consuming</em> it</h2>
+  <div class="pub-grid">
+    <div class="pub-card">
+      <div class="pub-card-header">
+        <div class="pub-type">Co-authored Book</div>
+        <div class="pub-title">Struktur Data dan Algoritma dengan Python: Teori, Implementasi, dan Studi Kasus</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-detail">
+          <span class="pub-detail-label">Type</span>
+          <span class="pub-detail-value">Academic Book</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">ISBN</span>
+          <span class="pub-detail-value">978-634-265-340-1</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Role</span>
+          <span class="pub-detail-value">Co-Author</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Subject</span>
+          <span class="pub-detail-value">Data Structures & Algorithms in Python</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Scope</span>
+          <span class="pub-detail-value">Theory, Implementation & Case Studies</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-card">
+      <div class="pub-card-header" style="background:var(--indigo)">
+        <div class="pub-type">Registered Intellectual Property</div>
+        <div class="pub-title">VROOM — Vehicle Rental Management Platform</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-detail">
+          <span class="pub-detail-label">Type</span>
+          <span class="pub-detail-value">Copyright Registration</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Application Number</span>
+          <span class="pub-detail-value">EC002026024837</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Year Filed</span>
+          <span class="pub-detail-value">2026</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Category</span>
+          <span class="pub-detail-value">Digital Product / Software</span>
+        </div>
+        <div class="pub-detail">
+          <span class="pub-detail-label">Status</span>
+          <span class="pub-detail-value">Registered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-label" style="color:rgba(255,255,255,0.35)"><span style="background:rgba(255,255,255,0.25);height:1px;display:inline-block;width:24px"></span>Contact</div>
+  <div class="contact-grid">
+    <div class="contact-intro">
+      <h2 class="contact-headline">Let's <em>Connect</em></h2>
+      <p class="contact-body">
+        I am always interested in discussing business analysis, digital products, process improvement, data-driven decision making, and technology-driven solutions.
+        <br><br>
+        Whether it is a project, an idea, research collaboration, or a professional conversation — I would be glad to connect and exchange perspectives.
+      </p>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:rheva@email.com">
+          <span class="contact-link-label">✉ Email</span>
+          <span class="contact-link-value">rheva@email.com</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/rheva-alfarera" target="_blank">
+          <span class="contact-link-label">↗ LinkedIn</span>
+          <span class="contact-link-value">linkedin.com/in/rheva-alfarera</span>
+        </a>
+        <a class="contact-link" href="https://github.com/rheva-alfarera" target="_blank">
+          <span class="contact-link-label">{ } GitHub</span>
+          <span class="contact-link-value">github.com/rheva-alfarera</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-cta-area">
+      <div>
+        <div class="contact-cta-heading">Open to opportunities</div>
+        <div class="contact-cta-sub">
+          Currently seeking roles in business analysis, product management, and data analytics. Available for internships, project collaborations, and full-time roles.
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="mailto:rheva@email.com" class="btn-cream">Send a Message</a>
+          <a href="#" class="btn-ghost">Download Portfolio PDF</a>
+        </div>
+      </div>
+      <div style="margin-top:auto;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06)">
+        <div style="font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px">Response Time</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.5)">Typically within 24–48 hours</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:rgba(0,0,0,0.2);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05)">
+  <div style="font-size:12px;color:rgba(255,255,255,0.2);font-family:var(--font-mono)">© 2026 Rheva Alfarera Mahfud</div>
+  <div style="font-size:12px;color:rgba(255,255,255,0.15);font-family:var(--font-mono)">Information Systems · Universitas Bakrie</div>
+</footer>
+
+<script>
+function toggleCase(card){
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.case-card.open').forEach(c=>c.classList.remove('open'));
+  if(!isOpen) card.classList.add('open');
+}
+
+function filterCases(tag, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.case-card').forEach(card=>{
+    if(tag==='all'){
+      card.style.display='';
+    } else {
+      const tags = (card.dataset.tags||'').split(',');
+      card.style.display = tags.includes(tag) ? '' : 'none';
+    }
+  });
+}
+
+// Intersection observer for subtle entrance
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.1});
+
+document.querySelectorAll('section').forEach(s=>{
+  s.style.transition='opacity 0.6s ease, transform 0.6s ease';
+  s.style.opacity='0';
+  s.style.transform='translateY(20px)';
+  observer.observe(s);
+});
+
+// Hero is always visible
+document.querySelector('.hero').style.opacity='1';
+document.querySelector('.hero').style.transform='none';
+</script>
+
+</body>
+</html>
